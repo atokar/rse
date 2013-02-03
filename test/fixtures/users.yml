@@ -1,8 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-first:
-  name: FirstUser@domain.com
-  password: FirstUserPass
-two:
-  name: User02@domain.com
-  password: Pass02
