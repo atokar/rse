@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   
   validates :name, 
     presence: true,
-    uniqueness: {:case_sensitive => false}, 
-    length: { :maximum => 30 }, 
-    format: { :with => name_regex }
+     uniqueness: {:case_sensitive => false}, 
+     length: { :maximum => 30 }, 
+     format: { :with => name_regex }
   
   validates :password,
     presence: true,
