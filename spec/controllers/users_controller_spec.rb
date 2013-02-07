@@ -47,7 +47,7 @@ describe UsersController do
 
       before(:each) do
         @input_attributes = { :name => "NewUser@newmail.com", 
-                  :password => "foobar", :password_confirmation => "foobar" }
+                  :password => "password", :password_confirmation => "password" }
       end
 
       it "should create a user" do
