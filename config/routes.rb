@@ -11,7 +11,7 @@ Rse::Application.routes.draw do
 #  get "pages/contact"
   
 #  get "pages/about"
-
+  
   match '/signup',  :to => 'users#new'
 
   match '/signin',  :to => 'sessions#new'

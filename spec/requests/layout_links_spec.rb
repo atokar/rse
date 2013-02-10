@@ -35,23 +35,23 @@ describe "LayoutLinks" do
   describe "when signed in" do
 
     before(:each) do
-      @user = FactoryGirl.build(:user)
+      @user = FactoryGirl.create(:user)
       visit signin_path
       fill_in :name,    :with => @user.name
       fill_in :password, :with => @user.password
       click_button
     end
 # fails
-#    it "should have a signout link" do
-#      visit root_path
-#      response.should have_selector("a", :href => signout_path,
-#                                         :content => "Sign out")
-#    end
+    it "should have a signout link" do
+      visit root_path
+      response.should have_selector("a", :href => signout_path,
+                                         :content => "Sign out")
+    end
 
-#    it "should have a profile link" do
-#      visit root_path
-#      response.should have_selector("a", :href => user_path(@user),
-#                                         :content => "Profile")
-#    end
+  it "should have a profile link" do
+    visit root_path
+      response.should have_selector("a", :href => user_path(@user),
+                                         :content => "Profile")
+    end
   end  
 end
