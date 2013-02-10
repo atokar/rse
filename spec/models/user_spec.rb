@@ -4,9 +4,9 @@ describe User do
 
   before(:each) do
     @input_attributes = {
-      name: "TestUser@test.com",
-      password: "TestUserPass",
-      password_confirmation: "TestUserPass"
+      name: "testuser@testmail.ru",
+      password: "password",
+      password_confirmation: "password"
     }
   end
 
@@ -65,5 +65,8 @@ describe User do
       @user.password_digest.should_not be_blank
     end
   end
+
+
+
    
 end

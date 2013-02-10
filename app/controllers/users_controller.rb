@@ -42,9 +42,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-      if @user.save
-        redirect_to @user
         # user was successfully created
+      if @user.save
+        sign_in @user
+        flash[:success] = "Welcome, #{@user.name} !"        
+        redirect_to @user
       else
         @title = "Sign up"
         render 'new'

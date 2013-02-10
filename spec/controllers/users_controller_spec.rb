@@ -14,7 +14,6 @@ describe UsersController do
   
   end
   
-
   describe "POST 'create'" do
 
     describe "failure" do
@@ -46,7 +45,7 @@ describe UsersController do
     describe "success" do
 
       before(:each) do
-        @input_attributes = { :name => "NewUser@newmail.com", 
+        @input_attributes = { :name => "newtest@testmail.ru", 
                   :password => "password", :password_confirmation => "password" }
       end
 
@@ -60,6 +59,11 @@ describe UsersController do
         post :create, :user => @input_attributes
         response.should redirect_to(user_path(assigns(:user)))
       end
+      
+      it "should sign the user in" do
+        post :create, :user => @input_attributes
+        controller.should be_signed_in
+      end      
     end
   end
 
