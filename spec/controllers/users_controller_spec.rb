@@ -54,16 +54,27 @@ describe UsersController do
           post :create, :user => @input_attributes
         end.should change(User, :count).by(1)
       end
-
-      it "should redirect to the user show page" do
-        post :create, :user => @input_attributes
-        response.should redirect_to(user_path(assigns(:user)))
-      end
       
-      it "should sign the user in" do
-        post :create, :user => @input_attributes
-        controller.should be_signed_in
-      end      
+# User must confirm account befor        
+      it "should redirect to the user show page" do
+       post :create, :user => @input_attributes
+        response.should redirect_to(root_path)
+      end
+# should generate conf_token
+# should send email
+
+      
+      
+
+#      it "should redirect to the user show page" do
+#        post :create, :user => @input_attributes
+#        response.should redirect_to(user_path(assigns(:user)))
+#      end
+      
+#      it "should sign the user in" do
+#        post :create, :user => @input_attributes
+#        controller.should be_signed_in
+#      end      
     end
   end
 

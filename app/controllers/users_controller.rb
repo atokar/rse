@@ -44,9 +44,11 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
         # user was successfully created
       if @user.save
-        sign_in @user
-        flash[:success] = "Welcome, #{@user.name} !"        
-        redirect_to @user
+#        sign_in @user
+#        flash[:success] = "Welcome, #{@user.name} !"        
+#        redirect_to @user
+         flash[:success] = "Welcome, to #{@user.name} was send confirmation instructions !"           
+         redirect_to root_path
       else
         @title = "Sign up"
         render 'new'
