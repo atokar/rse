@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
     presence: true,
     length: { :within => 8..30 }
 
-  before_save :generate_token
+
+  before_save { generate_token(:confirmation_token) }
   after_create :send_confirmation
 
   

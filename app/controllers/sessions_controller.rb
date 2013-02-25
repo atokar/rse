@@ -12,8 +12,7 @@ class SessionsController < ApplicationController
         sign_in user      
         redirect_to user   
       else
-        flash.now[:error] = "Check you email and confirm account."   
-        redirect_to root_path       
+        redirect_to root_path, notice: "Check you email and confirm account."       
       end       
     else
     # Create an error message and re-render the signin form.       

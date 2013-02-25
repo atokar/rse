@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
   
   def confirmation_email(user)
     @user = user
-    @url  = "http://localhost/confirmation/#{@user.confirmation_token}"  
+    @url  = "http://localhost:3000/confirmation/#{@user.confirmation_token}"  
     mail(:to => user.name, :subject => "Registered", :from => "admin@localhost.com")  
 
   end
