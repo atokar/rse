@@ -2,7 +2,7 @@ Rse::Application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :confirmations , :only => [:create]
+  resources :confirmations , :only => [:show]
 
 
 #  get "sessions/new"
@@ -19,11 +19,9 @@ Rse::Application.routes.draw do
 #match '/confirm',  :to => 'confirmations#new'
 
  
-  match '/confirmation/:confirmation_token', :to => 'confirmations#create'
-
+  match '/confirmation/:confirmation_token', :to => 'confirmations#show'
 
   match '/signup',  :to => 'users#new'
-
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
 
